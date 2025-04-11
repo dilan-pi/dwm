@@ -1,0 +1,46 @@
+
+#!/bin/sh
+
+# Internet status module for dwmblocks
+
+TERMINAL="${TERMINAL:-st}"
+
+case $BLOCK_BUTTON in
+	1) "$TERMINAL" -e nmtui; pkill -RTMIN+4 dwmblocks ;;
+	3) notify-send "🌐 Internet module" "\- Click to connect
+❌: wifi disabled
+📡: no wifi connection
+📶: wifi connection with quality
+❎: no ethernet
+🌐: ethernet working
+🔒: vpn is active
+" ;;
+	6) setsid -f "$TERMINAL" -e "$EDITOR" "$0" ;;
+esac
+
+# Wifi
+wifi_state=$(nmcli -t -f TYPE,STATE dev | grep '^wifi:' | cut -d: -f2)
+
+case $wifi_state in
+	connected)
+		signal=$(nmcli -t -f IN-USE,SIGNAL dev wifi | grep '^\*' | cut -d: -f2)
+		wifiicon="📶 ${signal:-100}% "
+		;;
+	disconnected)
+		wifiicon="📡 "
+		;;
+	unavailable|*)
+		wifiicon="❌ "
+		;;
+esac
+
+# Ethernet
+# ether_state=$(nmcli -t -f TYPE,STATE dev | grep '^ethernet:' | cut -d: -f2)
+# [ "$ether_state" = "connected" ] && ethericon="🌐" || ethericon="❎"
+
+# VPN
+vpn_state=$(nmcli -t -f TYPE,STATE dev | grep '^tun:' | cut -d: -f2)
+[ "$vpn_state" = "connected" ] && tunicon=" 🔒"
+
+printf "%s%s%s\n" "$wifiicon" "$ethericon" "$tunicon"
+

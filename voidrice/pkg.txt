@@ -33,3 +33,33 @@ alerque-libertinus-fonts
 dejavu-fonts-all
 
 https://github.com/GeorgeFilipkin/pulsemixer
+
+
+
+   1   │ install papirus-icon-theme
+   2   │
+   3   │ install tldr
+   4   │ sudo dnf install texlive-scheme-basic texlive-collection-fontsrecommended texlive-latex
+   5   │ install latexmk
+   6   │ install lua-language-server
+   7   │ sudo dnf install lua-language-server
+   8   │ install latex
+   9   │ sudo dnf install sublime-text
+  10   │
+  11   │ install bat
+  12   │ history "install"
+  13   │ install picom
+  14   │ install numlockx
+  15   │ install numlockx off
+  16   │ install feh
+  17   │ install maim
+  18   │ install lxappearance arc-theme
+  19   │ install dunst
+  20   │ install lm_sensors
+  21   │ install lm_sensor
+  22   │ install lm-sensor
+  23   │ install htop
+  24   │ install ffmpegthumbnailer
+  25   │ install ffmpeg-free
+  26   │ install xbacklight
+

@@ -34,7 +34,6 @@ I change them just to work on Fedora.Here is the original dotfiles.
 - ffmpegthumbnailer
 - htop
 - lm_sensors
-- sudo sensors-detect
 - picom
 - feh 
 - numlockx
@@ -48,4 +47,9 @@ I change them just to work on Fedora.Here is the original dotfiles.
 - alerque-libertinus-fonts
 - dejavu-fonts-all
 
+# How to use scripts 
 
+Just run the code and everything will work automatic !
+
+```sh
+sudo sensors-detect

@@ -38,7 +38,8 @@ I change them just to work on Fedora.Here is the original dotfiles.
 - feh 
 - numlockx
 - bat
-- lxappearance arc-theme
+- lxappearance 
+- arc-theme
 - maim
 - https://github.com/GeorgeFilipkin/pulsemixer
 
